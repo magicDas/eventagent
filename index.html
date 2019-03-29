@@ -29,7 +29,26 @@
     <script src="js/modernizr.custom.js"></script>
     <script src="js/jquery.lettering.js"></script>
     
-   
+   <script>
+     $(document).ready(function() {
+          // Скрипт появления титров
+         $("#os-phrases > h2").lettering('words').children("span").lettering().children("span").lettering(); 
+         //Скрипт пауза музыкального трека
+         var audio = $("#sound")[0];
+
+         $("#audio").on("click", function() {
+           if (audio.paused == false){
+               audio.pause();
+               $("#audioIcon").removeClass("fa-volume-up");
+               $("#audioIcon").addClass("fa-volume-off");
+           } else {
+             audio.play();
+             $("#audioIcon").removeClass("fa-volume-off");
+             $("#audioIcon").addClass("fa-volume-up");
+           }        
+         });
+     });
+   </script>
     <script>
       $(window).on('load', function () {        
         $('.loaderArea').delay(50500).fadeOut(1000);
@@ -677,16 +696,19 @@
 
     <!-- Скрипт появления титров -->
     <script>
-      $(document).ready(function() {
+      /*$(document).ready(function() {
         $("#os-phrases > h2").lettering('words').children("span").lettering().children("span").lettering(); 
-      });
+      });*/
     </script>
 
     <!--  Скрипт пауза музыкального трека -->
-    <script>
+    <!-- <script>
       $(document).ready(function() {
+           // Скрипт появления титров
+          $("#os-phrases > h2").lettering('words').children("span").lettering().children("span").lettering(); 
+          //Скрипт пауза музыкального трека
           var audio = $("#sound")[0];
-
+    
           $("#audio").on("click", function() {
             if (audio.paused == false){
                 audio.pause();
@@ -699,16 +721,7 @@
             }        
           });
       });
-      /*$("#audio").mouseenter(function() {
-        audio.play();
-        $("#audioIcon").removeClass("fa-volume-off");
-        $("#audioIcon").addClass("fa-volume-up");
-      }).mouseleave(function() {
-        audio.pause();
-        $("#audioIcon").removeClass("fa-volume-up");
-        $("#audioIcon").addClass("fa-volume-off");
-      });*/
-    </script>  
+    </script>   -->
 
     
     
